@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Display All Ledgers</h1>
+
+{% for chain in chains %}
+
+<h2>Chain</h2>
+
+{% for b in chain.blocks %}
+
+<h3>Block</h2>
+
+<h4>Header</h2>
+<ul>
+    <li>Previous Hash: {{ b.header['previous'] }}</li>
+    <li>Merkle Root: {{  b.header['merkle_root'] }}</li>
+    <li>Time: {{ b.header['time'] }}</li>
+</ul>
+
+<h4>Transactions</h2>
+<ul>
+{% for t in b.transactions %}
+    <li>{{ t }}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+{% endfor %}
+
+{% endblock %}

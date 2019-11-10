@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Home Page</h1>
+<p>Represents route "/index" or "/" as defined by Flask</p>
+
+<form action="/all" method="POST" role="form">m in html
+    <div>
+        <label for="username">Enter Username:</label>
+        <input name="username" id="username" value="admin">
+    </div>
+    <div>
+        <label for="password">Enter Password:</label>
+        <input name="password" id="password" value="admin">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Log In</button>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Chain {{ id }}</h1>
+
+{% for b in chain.blocks %}
+
+<h2>Block</h2>
+
+<h3>Header</h2>
+<ul>
+    <li>Previous Hash: {{ b.header['previous'] }}</li>
+    <li>Merkle Root: {{  b.header['merkle_root'] }}</li>
+    <li>Time: {{ b.header['time'] }}</li>
+</ul>
+
+<h3>Transactions</h2>
+<ul>
+{% for t in b.transactions %}
+    <li>{{ t }}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock %}
